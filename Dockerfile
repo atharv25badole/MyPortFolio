@@ -1,13 +1,21 @@
-# Use official OpenJDK 17 base image
+# Build stage
+FROM maven:3.9.6-eclipse-temurin-17 AS build
+WORKDIR /app
+
+# Copy source code
+COPY . .
+
+# Build the project and skip tests
+RUN mvn clean package -DskipTests
+
+# Run stage
 FROM openjdk:17-jdk-slim
+WORKDIR /app
 
-# Set the JAR file name (change to match your actual .jar name)
-ARG JAR_FILE=target/myportfolio-0.0.1-SNAPSHOT.jar
+# Copy built jar from the previous stage
+COPY --from=build /app/target/myportfolio-0.0.1-SNAPSHOT.jar app.jar
 
-# Copy the jar file to the container
-COPY ${JAR_FILE} app.jar
-
-# Expose the port to match Render’s dynamic PORT env
+# Expose dynamic port for Render
 EXPOSE 8080
 
 # Run the application
