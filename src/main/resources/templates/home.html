@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>Atharv Badole - Personal Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+          integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+          crossorigin="anonymous"
+          referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<!--    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!--Loading animation-->
+<div th:replace="~{fragments/loader :: loader}"></div>
+
+<!--  header  -->
+<div th:replace="~{fragments/header :: site-header}"></div>
+
+<!-- hero section -->
+<div th:replace="~{fragments/hero :: hero-section}"></div>
+
+<!--  about section  -->
+<div th:replace="~{fragments/about :: about-section}"></div>
+
+<!--  project section  -->
+<div th:replace="~{fragments/project :: project-section}"></div>
+
+<!--  experience section  -->
+<div th:replace="~{fragments/experience :: experience-section}"></div>
+
+<!--  achievements section  -->
+<div th:replace="~{fragments/achievements :: achievements-section}"></div>
+
+<!--  contact section  -->
+<div th:replace="~{fragments/contact :: contact-section}"></div>
+
+<!--  footer section  -->
+<div th:replace="~{fragments/footer :: footer-section}"></div>
+
+<!--custom script file-->
+<script src="/js/script.js"></script>
+</body>
+</html>
