@@ -1,3 +1,19 @@
+
+
+  if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+
+    // Scroll to #hero after page loads
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const heroSection = document.getElementById('hero');
+        if (heroSection) {
+          heroSection.scrollIntoView({ behavior: 'smooth' }); // or 'smooth' if you want animation
+        }
+      }, 0);
+    });
+
 // Loading Animation
 window.addEventListener('load', () => {
   setTimeout(() => {
@@ -91,34 +107,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 function toggleProjectDetail(id, btn) {
   const detail = document.getElementById(id);
-  const isVisible = !detail.classList.contains('hidden');
+  const isOpen = detail.classList.contains('show');
 
-  if (isVisible) {
-    detail.style.maxHeight = detail.scrollHeight + 'px';
-    requestAnimationFrame(() => {
-      detail.style.transition = 'max-height 0.2s ease-out';
-      detail.style.maxHeight = '0';
-      setTimeout(() => {
-        detail.classList.add('hidden');
-        detail.style.maxHeight = '';
-        detail.style.transition = '';
-      }, 500);
-    });
-    btn.textContent = 'Read More';
-  } else {
-    document.querySelectorAll('.project-detail').forEach(el => {
-      el.classList.add('hidden');
-      el.style.maxHeight = '';
-      el.style.transition = '';
-    });
-    document.querySelectorAll('.toggle-btn').forEach(b => b.textContent = 'Read More');
-    detail.classList.remove('hidden');
-    detail.style.maxHeight = '0';
-    requestAnimationFrame(() => {
-      detail.style.transition = 'max-height 0.3s ease-in';
-      detail.style.maxHeight = detail.scrollHeight + 'px';
-    });
+  document.querySelectorAll('.project-detail').forEach(section => {
+    section.classList.remove('show');
+    section.style.maxHeight = null;
+  });
+
+  document.querySelectorAll('.toggle-btn').forEach(button => {
+    button.textContent = 'Read More';
+  });
+
+  if (!isOpen) {
+    detail.classList.add('show');
+     detail.style.maxHeight = (detail.scrollHeight + 60) + 'px';
     btn.textContent = 'Read Less';
-    detail.scrollIntoView({ behavior: 'smooth' });
+     if (window.innerWidth < 768) {
+       detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+     }
   }
 }
+
+// scrollToTop btn
+
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+   window.addEventListener("scroll", () => {
+     if (window.scrollY > 300) {
+       scrollTopBtn.classList.add("show");
+     } else {
+       scrollTopBtn.classList.remove("show");
+     }
+   });
+
+   scrollTopBtn.addEventListener("click", () => {
+     window.scrollTo({ top: 0, behavior: "smooth" });
+   });

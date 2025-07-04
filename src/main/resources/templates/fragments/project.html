@@ -11,73 +11,75 @@
             </div>
 
 
-        <div class="project-grid">
-            <!-- Project 1 -->
-            <div class="project-card1">
-                <img src="project1.jpg" alt="Project 1" class="project-img" />
-                <div class="project-content1">
-                    <h3 class="project-title1">Electronic Library System</h3>
-                    <p class="project-subtitle">Java, MySQL, Spring MVC</p>
-                    <p class="project-desc">A system to manage books, users, and borrow requests with role-based login.</p>
-                    <div class="project-buttons">
-                        <button onclick="toggleProjectDetail('project1-detail', this)" class="toggle-btn">Read More</button>
-                        <a href="https://github.com/yourusername/electronic-library" target="_blank" class="github-btn">GitHub</a>
+            <div class="project-grid">
+                <!-- Project 1 -->
+                <div class="project-card1">
+                    <img src="assets/project1.jpg" alt="Electronic Library System" class="project-img" />
+                    <div class="project-content1">
+                        <h3 class="project-title1">Electronic Library System</h3>
+                        <p class="project-subtitle"><strong>Tech:</strong> Java, Spring MVC, MySQL, JSP</p>
+                        <p class="project-desc">A system to manage books, users, and borrow requests with role-based login.</p>
+                        <div class="project-buttons">
+                            <button onclick="toggleProjectDetail('project1-detail',this)" class="toggle-btn">Read More</button>
+                            <a href="https://github.com/yourusername/electronic-library" target="_blank" class="github-btn">GitHub</a>
+                            <a href="https://your-live-link.com/library" target="_blank" class="github-btn">🔗 Live</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-card1">
+                    <img src="assets/project2.jpg" alt="Employee Leave Management" class="project-img" />
+                    <div class="project-content1">
+                        <h3 class="project-title1">Employee Leave Management</h3>
+                        <p class="project-subtitle"><strong>Tech:</strong> Java, JDBC, MySQL</p>
+                        <p class="project-desc">Console-based system to manage leave requests, balances, and approvals.</p>
+                        <div class="project-buttons">
+                            <button onclick="toggleProjectDetail('project2-detail',this)" class="toggle-btn">Read More</button>
+                            <a href="https://github.com/yourusername/employee-leave-system" target="_blank" class="github-btn">GitHub</a>
+                            <a href="https://your-live-link.com/leave" target="_blank" class="github-btn">🔗 Live</a>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 2 -->
-            <div class="project-card1">
-                <img src="project2.jpg" alt="Project 2" class="project-img" />
-                <div class="project-content1">
-                    <h3 class="project-title1">Employee Leave Management</h3>
-                    <p class="project-subtitle">Java, MySQL, JDBC</p>
-                    <p class="project-desc">Console-based system to manage leave requests, balances, and approvals.</p>
-                    <div class="project-buttons">
-                        <button onclick="toggleProjectDetail('project2-detail', this)" class="toggle-btn">Read More</button>
-                        <a href="https://github.com/yourusername/employee-leave-system" target="_blank" class="github-btn">GitHub</a>
+            <!-- Detail Sections -->
+            <div id="project-detail-container">
+                <div id="project1-detail" class="project-detail">
+                    <h3 class="project-detail-title">Electronic Library System</h3>
+                    <p class="project-detail-role">Role: Full Stack Developer</p>
+                    <p class="project-detail-desc">A full-stack library management system for institutions to handle book inventory, users, borrowing, and returning efficiently.</p>
+                    <div class="project-detail-gallery">
+
+                        <img src="assets/project1-detail1.jpg" />
+                        <img src="assets/project1-detail2.jpg" />
+                        <img src="assets/project1-detail3.jpg" />
                     </div>
+                    <ul>
+                        <li>Spring MVC layered architecture</li>
+                        <li>Session-based login with role control</li>
+                        <li>MySQL integration with DAO pattern</li>
+                        <li>JSP + HTML interface, deployed on Tomcat</li>
+                    </ul>
                 </div>
-            </div>
-        </div>
 
-        <!-- Detail Sections -->
-        <div id="project-detail-container">
-            <div id="project1-detail" class="project-detail hidden">
-                <h3 class="project-detail-title">Electronic Library System</h3>
-                <p class="project-subtitle">Java, MySQL, Spring MVC</p>
-                <div class="project-detail-gallery">
-                    <img src="project1-detail1.jpg" />
-                    <img src="project1-detail2.jpg" />
-                    <img src="project1-detail3.jpg" />
-                    <img src="project1-detail4.jpg" />
+                <div id="project2-detail" class="project-detail">
+                    <h3 class="project-detail-title">Employee Leave Management</h3>
+                    <p class="project-detail-role">Role: Backend Developer</p>
+                    <p class="project-detail-desc">Java console application for employees to apply for leaves and admins to approve or reject them with leave balance tracking.</p>
+                    <div class="project-detail-gallery">
+                        <img src="assets/project2-detail1.jpg" />
+                        <img src="assets/project2-detail2.jpg" />
+                        <img src="assets/project2-detail3.jpg" />
+                    </div>
+                    <ul>
+                        <li>Console-based CLI UI using Java</li>
+                        <li>Leave status tracking by employee</li>
+                        <li>Admin approval workflow</li>
+                        <li>MySQL + JDBC for persistent data</li>
+                    </ul>
                 </div>
-                <p>This system allows students and admins to manage books, borrowing, returns, and accounts via role-based access.</p>
-                <ul>
-                    <li>Java with Spring MVC</li>
-                    <li>MySQL</li>
-                    <li>HTML/CSS + JSP</li>
-                    <li>Tomcat</li>
-                </ul>
             </div>
-
-            <div id="project2-detail" class="project-detail hidden">
-                <h3 class="project-detail-title">Employee Leave Management</h3>
-                <p class="project-subtitle">Java, MySQL, JDBC</p>
-                <div class="project-detail-gallery">
-                    <img src="project2-detail1.jpg" />
-                    <img src="project2-detail2.jpg" />
-                    <img src="project2-detail3.jpg" />
-                    <img src="project2-detail4.jpg" />
-                </div>
-                <p>A Java console app for employees to request leaves and admins to manage them easily.</p>
-                <ul>
-                    <li>Core Java</li>
-                    <li>JDBC + MySQL</li>
-                    <li>Console-based UI</li>
-                </ul>
-            </div>
-        </div>
         </div>
     </section>
 </th:block>
